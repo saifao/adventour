@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    Users Page
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h1>
+    Users Page
+  </h1>
+  <p>Welcome to Users Page
+  </p>
+
+  <nav>
+    <% if (user) { %>
+      <a href="/logout">LOG OUT <%= user.name %></a>
+      <% } else { %>
+        <a href="/auth/google">LOG IN</a>
+        <% } %>
+  </nav>
+</body>
+
+</html>

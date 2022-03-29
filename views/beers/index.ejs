@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script defer src="/javascripts/script.js"></script>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Style</th>
+                <th>Origin No</th>
+                <th>ABV</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% beers.forEach(function(beer) { %>
+                <tr>
+                    <td>
+                        <%= beer.name %>
+                    </td>
+                    <td>
+                        <%= beer.style %>
+                    </td>
+                    <td>
+                        <%= beer.origin %>
+                    </td>
+                    <td>
+                        <%= beer.abv %>
+                    </td>
+                </tr>
+                <% }); %>
+        </tbody>
+    </table>
+
+    <button id="refresh">Refresh Breweries</button>
+</body>
+
+</body>
+
+</html>

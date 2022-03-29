@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+
+    <form action="/beers" method="POST">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Style</th>
+                    <th>Origin No</th>
+                    <th>ABV</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" name="name"></td>
+                    <td><select name="style">
+                            <option value="Pilsner">Pilsner</option>
+                            <option value="Pale Ale">Pale Ale</option>
+                            <option value="Stout">Stout</option>
+                            <option value="Stout">Porter</option>
+                            <option value="Stout">IPA</option>
+                        </select></td>
+                    <td><input type="text" name="origin"></td>
+                    <td><input type="text" name="abv"></td>
+                    <!-- <td><select name="brewery">
+                            <option value="AUS">AUS</option>
+                            <option value="DFW">DFW</option>
+                            <option value="DEN" selected>DEN</option>
+                            <option value="LAX">LAX</option>
+                            <option value="SAN">SAN</option>
+                        </select></td> -->
+
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <button>Add Beer</button>
+    </form>
+</body>
+
+</body>
+
+</html>

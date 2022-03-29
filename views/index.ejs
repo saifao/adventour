@@ -15,13 +15,19 @@
   <p>Welcome to <%= title %>
   </p>
 
-  <nav>
-    <% if (user) { %>
-      <a href="/logout">LOG OUT</a>
-      <% } else { %>
-        <a href="/auth/google">LOG IN</a>
-        <% } %>
-  </nav>
+
+  <% if (user) { %>
+    <a href="/logout">LOG OUT <%= user.name %></a>
+    <br>
+    <a href="/beers/new">Add Beer</a>
+    <% } else { %>
+      <a href="/auth/google">LOG IN</a>
+      <% } %>
+        <br>
+        <a href="/beers">Show Beers</a>
+
+
+
 </body>
 
 </html>

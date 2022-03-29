@@ -18,10 +18,16 @@
   <nav>
     <% if (user) { %>
       <a href="/logout">LOG OUT <%= user.name %></a>
+
       <% } else { %>
         <a href="/auth/google">LOG IN</a>
         <% } %>
   </nav>
+
+  <p>
+    <%= text[1].id %>
+  </p>
+
 </body>
 
 </html>

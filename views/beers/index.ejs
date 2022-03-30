@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <script defer src="/javascripts/script.js"></script>
+
     <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 
@@ -20,7 +20,9 @@
             <% beers.forEach(function(beer) { %>
                 <tr>
                     <td>
-                        <%= beer.name %>
+                        <a href="/beers/<%= beer._id %>">
+                            <%= beer.name %>
+                        </a>
                     </td>
                     <td>
                         <%= beer.style %>
@@ -36,7 +38,7 @@
         </tbody>
     </table>
 
-    <button id="refresh">Refresh Breweries</button>
+
 </body>
 
 </body>

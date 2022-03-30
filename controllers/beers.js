@@ -1,7 +1,11 @@
+const fetch = require('node-fetch');
 const Beer = require('../models/beer')
+const Brewery = require('../models/brewery')
+const User = require('../models/user')
 
 module.exports = {
     index,
+    show,
     new: newBeer,
     create
 }
@@ -12,8 +16,20 @@ function index(req, res) {
     })
 
 }
+
+function show(req, res) {
+    Beer.findById(req.params.id).populate('breweries').exec(function (err, beer) {
+        Brewery.find({ _id: { $in: beer.breweries } }, function (err, breweries) {
+            console.log(breweries)
+            res.render('beers/show', { beer, breweries })
+        })
+    })
+}
+
 function newBeer(req, res) {
-    res.render('beers/new')
+    Brewery.find({}, function (err, breweries) {
+        res.render('beers/new', { breweries })
+    })
 }
 
 function create(req, res) {
@@ -27,3 +43,14 @@ function create(req, res) {
         res.redirect('/beers');
     });
 }
+
+
+// fetch("https://api.openbrewerydb.org/breweries")
+// .then(arrBreweries => arrBreweries.json())
+// .then(arrBreweries => arrBreweries.forEach(function (data) {
+//     const brewery = new Brewery(data)
+//     brewery.save(function (err) {
+//         if (err) return res.redirect('/');
+//         // res.redirect('/beers/index')
+//     })
+// }))

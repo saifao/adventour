@@ -2,7 +2,6 @@
 <html>
 
 <head>
-
     <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 
@@ -27,23 +26,27 @@
                             <option value="Stout">Stout</option>
                             <option value="Stout">Porter</option>
                             <option value="Stout">IPA</option>
-                        </select></td>
+                        </select>
+                    </td>
                     <td><input type="text" name="origin"></td>
                     <td><input type="text" name="abv"></td>
-                    <!-- <td><select name="brewery">
-                            <option value="AUS">AUS</option>
-                            <option value="DFW">DFW</option>
-                            <option value="DEN" selected>DEN</option>
-                            <option value="LAX">LAX</option>
-                            <option value="SAN">SAN</option>
-                        </select></td> -->
-
+                    <td><select name="breweries" id="breweryList">
+                            <% breweries.forEach(function(brewery) { %>
+                                <option value="<%= brewery.id %>">
+                                    <%= brewery.name %>
+                                </option>
+                                <% }); %>
+                        </select>
+                    </td>
                 </tr>
             </tbody>
         </table>
         <br>
         <button>Add Beer</button>
+
     </form>
+    <br>
+    <button id="refresh">Refresh Breweries</button>
 </body>
 
 </body>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Style</th>
+                <th>Origin No</th>
+                <th>ABV</th>
+                <th>Breweries</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <%= beer.name %>
+                </td>
+                <td>
+                    <%= beer.style %>
+                </td>
+                <td>
+                    <%= beer.origin %>
+                </td>
+                <td>
+                    <%= beer.abv %>
+                </td>
+                <td>
+                    <%= beer.breweries %>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+    <h2>Reviews</h2>
+
+    <% if (user) { %>
+        <form method="POST" action="/beers/<%= beer._id %>/reviews">
+            <label>Review:</label>
+            <!-- <textarea name="content"></textarea> -->
+            <input name="content" type="text">
+            <label>Rating:</label>
+            <select name="rating">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5" selected>5</option>
+            </select>
+            <button>Add</button>
+            <!-- <input type="submit" value="Add Review"> -->
+        </form>
+        <% } %>
+
+            <% if (beer.reviews.length) { %>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Content</th>
+                            <th>Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% beer.reviews.forEach(function(review) { %>
+                            <tr>
+                                <td>
+                                    <%= review.user %>
+                                </td>
+                                <td>
+                                    <%= review.content %>
+                                </td>
+                                <td>
+                                    <%= review.rating %>
+                                </td>
+                                <td>
+                                    <form action="/reviews/<%= review._id %>?_method=DELETE" method="POST">
+                                        <button type="submit">X</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <% }) %>
+                    </tbody>
+                </table>
+                <% } %>
+</body>
+
+<!-- </body> -->
+
+</html>

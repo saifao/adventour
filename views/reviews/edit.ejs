@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html>
+<%- include('../partials/header') %>
 
-<head>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-
-<body>
 
     <form action="/reviews/<%= review._id %>?_method=PUT" method="POST">
         <label>Update Review:</label>
@@ -21,6 +15,5 @@
         <button type="submit">UPDATE</button>
     </form>
 
-</body>
 
-</html>
+    <%- include('../partials/footer') %>

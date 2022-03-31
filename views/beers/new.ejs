@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-
-<body>
+<%- include('../partials/header') %>
 
     <form action="/beers" method="POST">
         <table>
@@ -47,8 +40,5 @@
     </form>
     <br>
     <button id="refresh">Refresh Breweries</button>
-</body>
 
-</body>
-
-</html>
+    <%- include('../partials/footer') %>

@@ -43,14 +43,3 @@ function create(req, res) {
         res.redirect('/beers');
     });
 }
-
-
-// fetch("https://api.openbrewerydb.org/breweries")
-// .then(arrBreweries => arrBreweries.json())
-// .then(arrBreweries => arrBreweries.forEach(function (data) {
-//     const brewery = new Brewery(data)
-//     brewery.save(function (err) {
-//         if (err) return res.redirect('/');
-//         // res.redirect('/beers/index')
-//     })
-// }))

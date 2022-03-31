@@ -72,7 +72,7 @@
                         <% beer.reviews.forEach(function(review) { %>
                             <tr>
                                 <td>
-                                    <%= review.user %>
+                                    <%= review.name %>
                                 </td>
                                 <td>
                                     <%= review.content %>
@@ -80,11 +80,14 @@
                                 <td>
                                     <%= review.rating %>
                                 </td>
-                                <td>
-                                    <form action="/reviews/<%= review._id %>?_method=DELETE" method="POST">
-                                        <button type="submit">X</button>
-                                    </form>
-                                </td>
+                                <% if (user && review.user.equals(user._id)) { %>
+                                    <td>
+                                        <form action="/reviews/<%= review._id %>?_method=DELETE" method="POST">
+                                            <button type="submit">X</button>
+                                        </form>
+                                        <a href="/reviews/<%= review._id %>/edit">Edit</a>
+                                    </td>
+                                    <% } %>
                             </tr>
                             <% }) %>
                     </tbody>

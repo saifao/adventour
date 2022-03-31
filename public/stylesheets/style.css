@@ -1,17 +1,14 @@
 body {
   /* padding: 50px; */
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-
   background-color: #517358;
-
 }
-
 
 a {
   color: #00B7FF;
 }
 
-.navBg {
+.navCustom {
   background-color: #2b302c;
 }
 
@@ -21,4 +18,83 @@ a {
 
 .bodyBg {
   background-color: #517358;
+}
+
+.tableCustom {
+  margin: 50px;
+  width: 1150px;
+}
+
+.divBeerIndex {
+  display: flex;
+  justify-content: center;
+}
+
+.buttonCustom {
+  font-size: 40px;
+  height: 15vh;
+  width: 20vw;
+  text-align: center;
+  color: #FFFFFF;
+  background: transparent;
+  border: solid 10px #A9A9A9;
+  border-radius: 15px;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.buttonCustom:hover {
+  color: #A9A9A9;
+  background: #FFFFFF;
+  border: solid 5px #A9A9A9;
+}
+
+.divNewBeer {
+  margin-left: 50px;
+}
+
+.divNewBeer td {
+  font-family: Impact, Haettenschweiler, 'Arial Bold', sans-serif;
+  font-size: 20px;
+  color: white;
+  padding: 15px;
+}
+
+#divShow {
+  display: flex;
+}
+
+#divBeerShow {
+  background-color: #2b302c;
+  flex: 1;
+}
+
+#divReviewShow {
+  flex: 4;
+  margin: 20px;
+}
+
+#divBreweryShow {
+  flex: 1;
+  margin: 20px;
+}
+
+.label {
+  font-size: 20px;
+  color: white;
+  padding: 0 15px;
+}
+
+.value {
+  font-family: Impact, Haettenschweiler, 'Arial Bold', sans-serif;
+  font-size: 40px;
+  color: white;
+  padding: 0 15px;
+}
+
+#divReviewShow>h1,
+#divBreweryShow>h1 {
+  font-family: Impact, Haettenschweiler, 'Arial Bold', sans-serif;
+  font-size: 40px;
+  color: #2b302c;
 }

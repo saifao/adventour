@@ -1,90 +1,134 @@
 <%- include('../partials/header') %>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Style</th>
-                <th>Origin No</th>
-                <th>ABV</th>
-                <th>Breweries</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    <%= beer.name %>
-                </td>
-                <td>
-                    <%= beer.style %>
-                </td>
-                <td>
-                    <%= beer.origin %>
-                </td>
-                <td>
-                    <%= beer.abv %>
-                </td>
-                <td>
-                    <%= beer.breweries %>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <div id="divShow">
+        <div id="divBeerShow">
+            <p class="label">Name</p>
+            <p class="value">
+                <%= beer.name %>
+            </p>
+            <p class="label">Style</p>
+            <p class="value">
+                <%= beer.style %>
+            </p>
+            <p class="label">Origin</p>
+            <p class="value">
+                <%= beer.origin %>
+            </p>
+            <p class="label">ABV</p>
+            <p class="value">
+                <%= beer.abv %>
+            </p>
+        </div>
 
-    <br>
-    <h2>Reviews</h2>
 
-    <% if (user) { %>
-        <form method="POST" action="/beers/<%= beer._id %>/reviews">
-            <label>Review:</label>
-            <!-- <textarea name="content"></textarea> -->
-            <input name="content" type="text">
-            <label>Rating:</label>
-            <select name="rating">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5" selected>5</option>
-            </select>
-            <button>Add</button>
-            <!-- <input type="submit" value="Add Review"> -->
-        </form>
-        <% } %>
 
-            <% if (beer.reviews.length) { %>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>User</th>
-                            <th>Content</th>
-                            <th>Rating</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <% beer.reviews.forEach(function(review) { %>
-                            <tr>
-                                <td>
-                                    <%= review.name %>
-                                </td>
-                                <td>
-                                    <%= review.content %>
-                                </td>
-                                <td>
-                                    <%= review.rating %>
-                                </td>
-                                <% if (user && review.user.equals(user._id)) { %>
-                                    <td>
-                                        <form action="/reviews/<%= review._id %>?_method=DELETE" method="POST">
-                                            <button type="submit">X</button>
-                                        </form>
-                                        <a href="/reviews/<%= review._id %>/edit">Edit</a>
-                                    </td>
-                                    <% } %>
-                            </tr>
-                            <% }) %>
-                    </tbody>
-                </table>
+
+        <div id="divReviewShow">
+            <h1>Hoptometrists are saying...</h1>
+
+            <% if (user) { %>
+                <form method="POST" action="/beers/<%= beer._id %>/reviews">
+                    <label>Review:</label>
+                    <!-- <textarea name="content"></textarea> -->
+                    <input name="content" type="text">
+                    <label>Rating:</label>
+                    <select name="rating">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5" selected>5</option>
+                    </select>
+                    <button>Add</button>
+                    <!-- <input type="submit" value="Add Review"> -->
+                </form>
                 <% } %>
 
-                    <%- include('../partials/footer') %>
+                    <% if (beer.reviews.length) { %>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>User</th>
+                                    <th>Content</th>
+                                    <th>Rating</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% beer.reviews.forEach(function(review) { %>
+                                    <tr>
+                                        <td>
+                                            <%= review.name %>
+                                        </td>
+                                        <td>
+                                            <%= review.content %>
+                                        </td>
+                                        <td>
+                                            <%= review.rating %>
+                                        </td>
+                                        <% if (user && review.user.equals(user._id)) { %>
+                                            <td>
+                                                <form action="/reviews/<%= review._id %>?_method=DELETE" method="POST">
+                                                    <button type="submit">X</button>
+                                                </form>
+                                                <a href="/reviews/<%= review._id %>/edit">Edit</a>
+                                            </td>
+                                            <% } %>
+                                    </tr>
+                                    <% }) %>
+                            </tbody>
+                        </table>
+                        <% } %>
+
+        </div>
+
+
+
+
+
+
+        <div id="divBreweryShow">
+            <h1>Available@</h1>
+            <p class="value">
+                <% if (breweries && breweries[0]) { %>
+                    <%= breweries[0].name %>
+                        <% } %>
+            </p>
+        </div>
+
+    </div>
+
+    <%- include('../partials/footer') %>
+
+        <!-- 
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Style</th>
+                                <th>Origin No</th>
+                                <th>ABV</th>
+                                <th>Breweries</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <%= beer.name %>
+                                </td>
+                                <td>
+                                    <%= beer.style %>
+                                </td>
+                                <td>
+                                    <%= beer.origin %>
+                                </td>
+                                <td>
+                                    <%= beer.abv %>
+                                </td>
+                                <td>
+                                    <% if (breweries && breweries[0]) { %>
+                                        <%= breweries[0].name %>
+                                            <% } %>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table> -->

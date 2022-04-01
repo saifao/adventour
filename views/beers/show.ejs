@@ -45,39 +45,40 @@
                 <% } %>
 
                     <% if (beer.reviews.length) { %>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>User</th>
-                                    <th>Content</th>
-                                    <th>Rating</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <% beer.reviews.forEach(function(review) { %>
-                                    <tr>
-                                        <td>
-                                            <%= review.name %>
-                                        </td>
-                                        <td>
+                        <% beer.reviews.forEach(function(review) { %>
+                            <div class="card">
+                                <div class="card-header">
+                                    <% for(let i=review.rating ; i>0 ; i--) { %>
+                                        <span class="fa fa-star checked"></span>
+                                        <% } %>
+                                            <% for(let j=5-review.rating ; j>0 ; j--) { %>
+                                                <span class="fa fa-star"></span>
+                                                <% } %>
+                                </div>
+                                <div class="card-body">
+                                    <blockquote class="blockquote mb-0">
+                                        <p>
                                             <%= review.content %>
-                                        </td>
-                                        <td>
-                                            <%= review.rating %>
-                                        </td>
-                                        <% if (user && review.user.equals(user._id)) { %>
-                                            <td>
-                                                <form action="/reviews/<%= review._id %>?_method=DELETE" method="POST">
-                                                    <button type="submit">X</button>
-                                                </form>
-                                                <a href="/reviews/<%= review._id %>/edit">Edit</a>
-                                            </td>
-                                            <% } %>
-                                    </tr>
-                                    <% }) %>
-                            </tbody>
-                        </table>
-                        <% } %>
+                                        </p>
+                                        <footer class="blockquote-footer"><cite title="Source Title">
+                                                <%= review.name %>
+                                            </cite></footer>
+                                    </blockquote>
+                                </div>
+                            </div>
+
+                            <!-- <% if (user && review.user.equals(user._id)) { %>
+
+                                        <form action="/reviews/<%= review._id %>?_method=DELETE" method="POST">
+                                            <button type="submit">X</button>
+                                        </form>
+                                        <a href="/reviews/<%= review._id %>/edit">Edit</a>
+
+                                    <% } %> -->
+
+                            <% }) %>
+
+                                <% } %>
 
         </div>
 

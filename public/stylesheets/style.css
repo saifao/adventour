@@ -98,3 +98,7 @@ a {
   font-size: 40px;
   color: #2b302c;
 }
+
+.checked {
+  color: orange;
+}

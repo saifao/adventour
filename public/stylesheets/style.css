@@ -12,7 +12,7 @@ a {
   background-color: #2b302c;
 }
 
-.navWhite {
+. .navWhite {
   color: white;
 }
 
@@ -99,6 +99,27 @@ a {
   color: #2b302c;
 }
 
+#reviewContainer {
+  width: 30vw;
+  margin: 10px;
+
+}
+
+#reviewHeader {
+  display: flex;
+}
+
 .checked {
   color: orange;
+}
+
+.reviewChange {
+  /* margin-right: 1rem; */
+  display: inline-block;
+  background: #c0c1ce;
+  color: #2b302c;
+  padding: 0.1rem 1.0rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  /* margin-bottom: 0.5rem; */
 }

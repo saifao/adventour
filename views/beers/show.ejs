@@ -67,18 +67,18 @@
                                 </div>
                             </div>
 
-                            <!-- <% if (user && review.user.equals(user._id)) { %>
+                            <% if (user && review.user.equals(user._id)) { %>
 
-                                        <form action="/reviews/<%= review._id %>?_method=DELETE" method="POST">
-                                            <button type="submit">X</button>
-                                        </form>
-                                        <a href="/reviews/<%= review._id %>/edit">Edit</a>
-
-                                    <% } %> -->
-
-                            <% }) %>
+                                <form action="/reviews/<%= review._id %>?_method=DELETE" method="POST">
+                                    <button type="submit">X</button>
+                                </form>
+                                <a href="/reviews/<%= review._id %>/edit">Edit</a>
 
                                 <% } %>
+
+                                    <% }) %>
+
+                                        <% } %>
 
         </div>
 

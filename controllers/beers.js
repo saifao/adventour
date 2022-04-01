@@ -18,9 +18,9 @@ function index(req, res) {
 function show(req, res) {
     Beer.findById(req.params.id).populate('breweries').exec(function (err, beer) {
         Brewery.find({ _id: { $in: beer.breweries } }, function (err, breweries) {
-            console.log(beer)
-            console.log(breweries)
-            res.render('beers/show', { beer, breweries })
+            Brewery.find({ _id: { $nin: beer.breweries } }, function (err, addList) {
+                res.render('beers/show', { beer, breweries, addList })
+            })
         })
     })
 }

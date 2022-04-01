@@ -8,6 +8,11 @@ a {
   color: #00B7FF;
 }
 
+textarea {
+  width: 60vw;
+  height: 30vh;
+}
+
 .navCustom {
   background-color: #2b302c;
 }
@@ -122,4 +127,12 @@ a {
   border-radius: 2rem;
   font-weight: 600;
   /* margin-bottom: 0.5rem; */
+}
+
+.divEditReview {
+  margin-left: 50px;
+  font-family: Impact, Haettenschweiler, 'Arial Bold', sans-serif;
+  font-size: 30px;
+  color: #2b302c;
+  padding: 15px;
 }

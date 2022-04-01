@@ -19,7 +19,7 @@ Project planning (if you're into that)
 
 ### Screenshots
 
-(images/landing_page.png)
+!(images/landing_page.png)
 
 ### Next Steps
 - add feature to remove beers from the list (user-centric because it encourages participation)

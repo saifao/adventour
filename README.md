@@ -26,6 +26,7 @@ Beer View Page
 ![](/public/images/beer_view.png)
 
 ### Next Steps
+- add Refresh Breweries feature to pull list of breweries using an API
 - add feature to remove beers from the list (user-centric because it encourages participation)
 - add feature to remove breweries assigned to a beer (not user-centric to utilize large user-base for most up-to-date information)
 - add accordian navigation feature to improve UX

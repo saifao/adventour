@@ -17,6 +17,10 @@ Click here to start your journey
 Project planning (if you're into that)
 - https://trello.com/b/wDM6g7xn/adventour
 
+### Screenshots
+
+(images/landing_page.png)
+
 ### Next Steps
 - add feature to remove beers from the list (user-centric because it encourages participation)
 - add feature to remove breweries assigned to a beer (not user-centric to utilize large user-base for most up-to-date information)

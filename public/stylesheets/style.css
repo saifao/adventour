@@ -154,3 +154,13 @@ textarea {
   color: #2b302c;
   padding: 15px;
 }
+
+#login {
+  animation: flashing 1s linear infinite;
+}
+
+@keyframes flashing {
+  50% {
+    opacity: 0;
+  }
+}

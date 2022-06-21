@@ -1,40 +1,42 @@
 <%- include('../partials/header') %>
+    <div class="landingPage">
+        <div class="tableContainer">
+            <table class="table tableCustom table-dark table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Style</th>
+                        <th>Origin No</th>
+                        <th>ABV</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% beers.forEach(function(beer) { %>
+                        <tr>
+                            <td>
+                                <a class="text-decoration-none beerLink" href="/beers/<%= beer._id %>">
+                                    <%= beer.name %>
+                                </a>
+                            </td>
+                            <td>
+                                <%= beer.style %>
+                            </td>
+                            <td>
+                                <%= beer.origin %>
+                            </td>
+                            <td>
+                                <%= beer.abv %>
+                            </td>
+                        </tr>
+                        <% }); %>
+                </tbody>
+            </table>
+        </div>
 
-    <table class="table tableCustom table-dark table-striped table-hover">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Style</th>
-                <th>Origin No</th>
-                <th>ABV</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% beers.forEach(function(beer) { %>
-                <tr>
-                    <td>
-                        <a href="/beers/<%= beer._id %>">
-                            <%= beer.name %>
-                        </a>
-                    </td>
-                    <td>
-                        <%= beer.style %>
-                    </td>
-                    <td>
-                        <%= beer.origin %>
-                    </td>
-                    <td>
-                        <%= beer.abv %>
-                    </td>
-                </tr>
-                <% }); %>
-        </tbody>
-    </table>
-
-    <br>
-    <div class="divBeerIndex">
-        <form action="/beers/new"><button class="buttonCustom">Add Beer</button></form>
+        <br>
+        <div class="divBeerIndex">
+            <form action="/beers/new"><button class="buttonCustom">Add</button></form>
+        </div>
     </div>
-
 
     <%- include('../partials/footer') %>

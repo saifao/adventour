@@ -27,12 +27,15 @@ function show(req, res) {
 
 function newBeer(req, res) {
     Brewery.find({}, function (err, breweries) {
+        if (err) {
+            console.log(err)
+        }
         res.render('beers/new', { breweries })
+
     })
 }
 
 function create(req, res) {
-    console.log(req.body)
     const beer = new Beer(req.body);
     beer.save(function (err) {
         if (err) {

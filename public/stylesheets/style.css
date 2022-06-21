@@ -1,5 +1,4 @@
 body {
-  /* padding: 50px; */
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: #517358;
 }
@@ -17,17 +16,36 @@ textarea {
   background-color: #2b302c;
 }
 
-. .navWhite {
+.navLink {
   color: white;
+  display: inline;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 20px;
 }
 
 .bodyBg {
   background-color: #517358;
 }
 
+.landingPage {
+  background: url('../images/barrels.jpg');
+  padding-bottom: 230px;
+}
+
+.tableContainer {
+  display: flex;
+  justify-content: center;
+}
+
 .tableCustom {
-  margin: 50px;
+  margin-top: 30px;
   width: 1150px;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+}
+
+.beerLink:hover {
+  cursor: pointer;
 }
 
 .divBeerIndex {
@@ -37,8 +55,8 @@ textarea {
 
 .buttonCustom {
   font-size: 40px;
-  height: 15vh;
-  width: 20vw;
+  height: 80px;
+  width: 200px;
   text-align: center;
   color: #FFFFFF;
   background: transparent;

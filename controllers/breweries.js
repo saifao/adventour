@@ -14,11 +14,11 @@ function create(req, res) {
 
 async function refresh(req, res) {
     await Brewery.deleteMany({})
-    fetch("https://api.openbrewerydb.org/breweries")
-        .then(arrBreweries => arrBreweries.json())
-        .then(arrBreweries => arrBreweries.forEach(function (data) {
-            const brewery = new Brewery(data)
-            brewery.save();
-        }))
-        .then(res.redirect('/beers/new'))
+    const brewList = await fetch("https://api.openbrewerydb.org/breweries")
+    const brewListParsed = await brewList.json()
+    brewListParsed.forEach((data) => {
+        const brewery = new Brewery(data)
+        brewery.save();
+    })
+    res.redirect('/beers/new')
 }
